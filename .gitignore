@@ -1,3 +1,4 @@
+# binaries
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -8,5 +9,29 @@
 *.war
 *.ear
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# virtual machine crash logs
+# see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Eclipse
+# Eclipse: Core
+.project
+.classpath
+.buildpath
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# Eclipse: External tool builders
+.externalToolBuilders/
+
+# Eclipse: Locally stored "Eclipse launch configurations"
+*.launch
