@@ -58,5 +58,12 @@ public class TestBuilder3x3 {
 		face = this.builder.buildPecaFace(Cor.azul);
 		assertEquals(Cor.azul, face.cor);
 	}
+	
+	@Test
+	public void testBuildFace(){
+		
+		
+		
+	}
 
 }

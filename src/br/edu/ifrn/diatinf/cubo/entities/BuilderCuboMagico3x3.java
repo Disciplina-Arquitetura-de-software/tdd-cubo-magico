@@ -16,6 +16,7 @@ public class BuilderCuboMagico3x3 {
 
 	public Peca buildPecaCentral(Cor cor) {
 		Peca p = new Peca();
+		p.faces = new PecaFace[1];
 		p.faces[0] = this.buildPecaFace(cor);
 		return p;
 	}
