@@ -17,7 +17,7 @@ public class TestBuilder3x3 {
 	}
 	
 	@Test
-	public void testBuildPeca() {
+	public void testBuildPecaCentral() {
 		
 		Peca peca = builder.buildPecaCentral(Cor.vermelho);
 
@@ -25,16 +25,28 @@ public class TestBuilder3x3 {
 		assertEquals(1, peca.faces.length);
 		assertNotNull(peca.faces[0]);
 		assertEquals(Cor.vermelho, peca.faces[0].cor);
-
-		peca = builder.buildPecaLateral(Cor.vermelho, Cor.azul);
+		assertNotNull(peca.faces[0].peca);
+		assertEquals(peca, peca.faces[0].peca);
+	}
+	
+	@Test
+	public void testBuildPecaLateral() {
+		Peca peca = builder.buildPecaLateral(Cor.vermelho, Cor.azul);
 
 		assertNotNull(peca);
 		assertNotNull(peca.faces);
 		assertEquals(2, peca.faces.length);
 		assertEquals(Cor.vermelho, peca.faces[0].cor);
 		assertEquals(Cor.azul, peca.faces[1].cor);
-		
-		peca = builder.buildPecaQuina(Cor.vermelho, Cor.azul, Cor.verde);
+		assertNotNull(peca.faces[0].peca);
+		assertNotNull(peca.faces[1].peca);
+		assertEquals(peca, peca.faces[0].peca);
+		assertEquals(peca, peca.faces[1].peca);
+	}
+	
+	@Test
+	public void testBuildPecaQuina() {
+		Peca peca = builder.buildPecaQuina(Cor.vermelho, Cor.azul, Cor.verde);
 		
 		assertNotNull(peca);
 		assertNotNull(peca.faces);
@@ -42,11 +54,18 @@ public class TestBuilder3x3 {
 		assertEquals(Cor.vermelho, peca.faces[0].cor);
 		assertEquals(Cor.azul, peca.faces[1].cor);
 		assertEquals(Cor.verde, peca.faces[2].cor);
+		assertNotNull(peca.faces[0].peca);
+		assertNotNull(peca.faces[1].peca);
+		assertNotNull(peca.faces[2].peca);
+		assertEquals(peca, peca.faces[0].peca);
+		assertEquals(peca, peca.faces[1].peca);
+		assertEquals(peca, peca.faces[2].peca);
 		
 	}
 	
 	@Test
 	public void testBuildPecaFace() {
+		Peca peca = new Peca();
 		PecaFace face = this.builder.buildPecaFace(Cor.vermelho);
 		
 		assertNotNull(face);
@@ -63,7 +82,22 @@ public class TestBuilder3x3 {
 	public void testBuildFace(){
 		
 		
+		Face face = this.builder.buildFace(Cor.vermelho); 
 		
+		assertNotNull(face);
+		
+		for (int i = 0; i < 9; i++) {
+			assertNotNull(face.pecasFaces[i]);
+			assertEquals(Cor.vermelho, face.pecasFaces[i].cor);
+		}
+		
+		face = this.builder.buildFace(Cor.verde);
+		
+		for (int i = 0; i < 9; i++) {
+			assertNotNull(face.pecasFaces[i]);
+			assertEquals(Cor.verde, face.pecasFaces[i].cor);
+		}
+			
 	}
 
 }

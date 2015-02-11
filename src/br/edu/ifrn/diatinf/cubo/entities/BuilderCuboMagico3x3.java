@@ -18,6 +18,7 @@ public class BuilderCuboMagico3x3 {
 		Peca p = new Peca();
 		p.faces = new PecaFace[1];
 		p.faces[0] = this.buildPecaFace(cor);
+		p.faces[0].peca = p;
 		return p;
 	}
 
@@ -26,17 +27,33 @@ public class BuilderCuboMagico3x3 {
 		p.faces = new PecaFace[2];
 		p.faces[0] = this.buildPecaFace(cor1);
 		p.faces[1]=this.buildPecaFace(cor2);
+		p.faces[0].peca = p;
+		p.faces[1].peca = p;
 		return p;
 	}
 
 	public Peca buildPecaQuina(Cor vermelho, Cor azul, Cor verde) {
-		// TODO Auto-generated method stub
 		Peca p = new Peca();
 		p.faces = new PecaFace[3];
 		p.faces[0] = this.buildPecaFace(vermelho);
 		p.faces[1] = this.buildPecaFace(azul);
 		p.faces[2] = this.buildPecaFace(verde);
+		p.faces[0].peca = p;
+		p.faces[1].peca = p;
+		p.faces[2].peca = p;
 		return p;
+	}
+
+	public Face buildFace(Cor cor) {
+		// TODO Auto-generated method stub
+		Face face = new Face();
+		face.pecasFaces = new PecaFace[9];
+		
+		for (int i = 0; i < 9; i++) {
+			face.pecasFaces[i] = this.buildPecaFace(cor);
+		}
+		
+		return face;
 	}
 	
 }
