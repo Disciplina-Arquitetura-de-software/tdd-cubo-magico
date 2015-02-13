@@ -45,7 +45,6 @@ public class BuilderCuboMagico3x3 {
 	}
 
 	public Face buildFace(Cor cor) {
-		// TODO Auto-generated method stub
 		Face face = new Face();
 		face.pecasFaces = new PecaFace[9];
 		
@@ -54,6 +53,33 @@ public class BuilderCuboMagico3x3 {
 		}
 		
 		return face;
+	}
+
+	public Face[] build6faces() {
+		Face[] faces= new Face[6];
+		
+		Cor[] cores= {
+             Cor.vermelho,
+             Cor.azul,
+             Cor.branco,
+             Cor.amarelo,
+             Cor.verde,
+             Cor.laranja
+		};
+		
+		for (int i =0; i<faces.length; i++){
+			faces[i]= buildFace(cores[i]);
+		}
+		
+		return faces;
+	}
+
+	public CuboMagico buildCubo() {
+		CuboMagico cubo = new CuboMagico();
+		
+		
+		
+		return cubo;
 	}
 	
 }

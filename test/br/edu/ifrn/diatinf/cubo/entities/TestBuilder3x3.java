@@ -2,6 +2,7 @@ package br.edu.ifrn.diatinf.cubo.entities;
 
 import static org.junit.Assert.*;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.junit.Test;
@@ -94,10 +95,44 @@ public class TestBuilder3x3 {
 		face = this.builder.buildFace(Cor.verde);
 		
 		for (int i = 0; i < 9; i++) {
-			assertNotNull(face.pecasFaces[i]);
+			assertNotNull(face.getPecaFace(i));
 			assertEquals(Cor.verde, face.pecasFaces[i].cor);
 		}
+		
+		
 			
 	}
+	
+	@Test
+	public void testBuild6Faces(){
+		
+		Face[] faces = this.builder.build6faces(); 
+		HashSet<Cor> cores = new HashSet<Cor>();
+		
+		assertNotNull(faces);
+		assertEquals(6,faces.length);	
+		
+		for( Face face : faces ){
+			assertNotNull(face);
+			cores.add(face.getPecaFace(0).cor);
+		}
+		
+		assertEquals(6, cores.size());
+		
+	}
+	
+	@Test
+	public void testBuildCubo(){
+		
+		CuboMagico cubo = this.builder.buildCubo();
+		assertNotNull(cubo);
+		
+		assertEquals(6, cubo.faces.length);
+		
+	}
+	
+	
+	
+	
 
 }
