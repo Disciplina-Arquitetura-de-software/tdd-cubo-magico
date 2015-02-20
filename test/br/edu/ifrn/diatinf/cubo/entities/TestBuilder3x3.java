@@ -89,17 +89,21 @@ public class TestBuilder3x3 {
 		
 		for (int i = 0; i < 9; i++) {
 			assertNotNull(face.pecasFaces[i]);
-			assertEquals(Cor.vermelho, face.pecasFaces[i].cor);
+			assertEquals(Cor.vermelho, face.getPecaFace(i).cor);
 		}
 		
 		face = this.builder.buildFace(Cor.verde);
 		
 		for (int i = 0; i < 9; i++) {
 			assertNotNull(face.getPecaFace(i));
-			assertEquals(Cor.verde, face.pecasFaces[i].cor);
+			assertEquals(Cor.verde, face.getPecaFace(i).cor);
 		}
 		
-		
+		assertNotNull(face.faces);
+		assertNull(face.getFaceDireita());
+		assertNull(face.getFaceEsquerda());
+		assertNull(face.getFaceCima());
+		assertNull(face.getFaceBaixo());
 			
 	}
 	
@@ -129,10 +133,12 @@ public class TestBuilder3x3 {
 		
 		assertEquals(6, cubo.faces.length);
 		
+		assertEquals(Cor.branco, cubo.getFacePrincipal().nome);
+		assertEquals(Cor.vermelho,cubo.getFacePrincipal().getFaceDireita().nome);
+		
 	}
 	
 	
 	
 	
-
 }

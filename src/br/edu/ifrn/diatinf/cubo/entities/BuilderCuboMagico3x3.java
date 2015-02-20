@@ -47,6 +47,7 @@ public class BuilderCuboMagico3x3 {
 	public Face buildFace(Cor cor) {
 		Face face = new Face();
 		face.pecasFaces = new PecaFace[9];
+		face.nome=cor;
 		
 		for (int i = 0; i < 9; i++) {
 			face.pecasFaces[i] = this.buildPecaFace(cor);
@@ -76,8 +77,8 @@ public class BuilderCuboMagico3x3 {
 
 	public CuboMagico buildCubo() {
 		CuboMagico cubo = new CuboMagico();
-		
-		
+		cubo.faces = this.build6faces();
+		cubo.facePrincipal=cubo.faces[2];
 		
 		return cubo;
 	}
