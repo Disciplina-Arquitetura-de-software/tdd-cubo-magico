@@ -59,18 +59,13 @@ public class BuilderCuboMagico3x3 {
 	public Face[] build6faces() {
 		Face[] faces= new Face[6];
 		
-		Cor[] cores= {
-             Cor.vermelho,
-             Cor.azul,
-             Cor.branco,
-             Cor.amarelo,
-             Cor.verde,
-             Cor.laranja
-		};
 		
-		for (int i =0; i<faces.length; i++){
-			faces[i]= buildFace(cores[i]);
-		}
+		faces[Cor.branco.getCor()]= buildFace(Cor.branco);
+		faces[Cor.verde.getCor()]= buildFace(Cor.verde);
+		faces[Cor.vermelho.getCor()]= buildFace(Cor.vermelho);
+		faces[Cor.azul.getCor()]= buildFace(Cor.azul);
+		faces[Cor.laranja.getCor()]= buildFace(Cor.laranja);
+		faces[Cor.amarelo.getCor()]= buildFace(Cor.amarelo);
 		
 		return faces;
 	}
@@ -78,7 +73,13 @@ public class BuilderCuboMagico3x3 {
 	public CuboMagico buildCubo() {
 		CuboMagico cubo = new CuboMagico();
 		cubo.faces = this.build6faces();
-		cubo.facePrincipal=cubo.faces[2];
+		cubo.facePrincipal=cubo.faces[Cor.branco.getCor()];
+		cubo.facePrincipal.setFacesVizinhas(
+				cubo.faces[Cor.vermelho.getCor()], 
+				cubo.faces[Cor.laranja.getCor()],
+				cubo.faces[Cor.azul.getCor()],
+				cubo.faces[Cor.verde.getCor()]);
+		
 		
 		return cubo;
 	}

@@ -9,4 +9,8 @@ public enum Direcoes {
 	Direcoes(int value){
 		this.value = value;
 	}
+	
+	public int getDirecoes(){
+		return value;
+	}
 }

@@ -4,7 +4,9 @@ public class Face {
 
 	public PecaFace[] pecasFaces;
 	public Cor nome;
-	public Face[] faces = new Face[4];
+	public Face[] facesVizinhas = new Face[4];
+	
+	
 
 	public PecaFace getPecaFace(int indice) {
 		return this.pecasFaces[indice];
@@ -15,19 +17,25 @@ public class Face {
 	}
     
 	public Face getFaceDireita() {
-		int fc = Integer.parseInt(Direcoes.Direita.toString());
-		return faces[fc];
+		return facesVizinhas[Direcoes.Direita.getDirecoes()];
 	}
 
 	public Face getFaceEsquerda() {
-		return null;
+		return facesVizinhas[Direcoes.Esquerda.getDirecoes()];
 	}
 
 	public Face getFaceBaixo() {
-		return null;
+		return facesVizinhas[Direcoes.Baixo.getDirecoes()];
 	}
 
 	public Face getFaceCima() {
-		return null;
+		return facesVizinhas[Direcoes.Cima.getDirecoes()];
+	}
+	
+	public void setFacesVizinhas(Face direita, Face esquerda, Face cima, Face baixo){
+		this.facesVizinhas[Direcoes.Direita.getDirecoes()] = direita;
+		this.facesVizinhas[Direcoes.Esquerda.getDirecoes()] = esquerda;
+		this.facesVizinhas[Direcoes.Cima.getDirecoes()] = cima;
+		this.facesVizinhas[Direcoes.Baixo.getDirecoes()] = baixo;
 	}
 }

@@ -1,16 +1,19 @@
 package br.edu.ifrn.diatinf.cubo.entities;
 
 public enum Cor {
-	indefinida(0), 
-	vermelho(1), 
-	verde(2), 
-	azul(3), 
-	branco(4), 
-	amarelo(5),
-	laranja(6);
+	indefinida(-1), 
+	vermelho(0), 
+	verde(1), 
+	azul(2), 
+	branco(3), 
+	amarelo(4),
+	laranja(5);
 	
 	int value;
 	Cor(int value){
 		this.value = value;
+	}
+	public int getCor(){
+		return value;
 	}
 }
