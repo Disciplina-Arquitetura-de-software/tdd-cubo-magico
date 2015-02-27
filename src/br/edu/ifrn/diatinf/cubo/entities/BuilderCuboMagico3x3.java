@@ -80,7 +80,13 @@ public class BuilderCuboMagico3x3 {
 				cubo.faces[Cor.azul.getCor()],
 				cubo.faces[Cor.verde.getCor()]);
 		
-		
+		Face verde = cubo.faces[Cor.verde.getCor()];
+		verde.setFacesVizinhas(
+			cubo.faces[Cor.vermelho.getCor()],
+			cubo.faces[Cor.laranja.getCor()],
+			cubo.faces[Cor.branco.getCor()],
+			cubo.faces[Cor.amarelo.getCor()]
+		);
 		return cubo;
 	}
 	
