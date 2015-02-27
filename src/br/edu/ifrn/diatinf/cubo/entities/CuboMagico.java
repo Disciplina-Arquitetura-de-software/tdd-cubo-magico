@@ -8,6 +8,12 @@ public class CuboMagico {
 	public Face getFacePrincipal() {
 		return this.facePrincipal;
 	}
-	
-	
+
+	public Face[] getFaces() {
+		return faces;
+	}
+
+	public void setFaces(Face[] faces) {
+		this.faces = faces;
+	}
 }

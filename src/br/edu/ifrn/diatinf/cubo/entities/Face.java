@@ -5,8 +5,6 @@ public class Face {
 	public PecaFace[] pecasFaces;
 	public Cor nome;
 	public Face[] facesVizinhas = new Face[4];
-	
-	
 
 	public PecaFace getPecaFace(int indice) {
 		return this.pecasFaces[indice];
