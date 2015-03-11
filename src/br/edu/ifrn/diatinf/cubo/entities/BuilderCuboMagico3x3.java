@@ -74,48 +74,46 @@ public class BuilderCuboMagico3x3 {
 		CuboMagico cubo = new CuboMagico();
 		cubo.faces = this.build6faces();
 		cubo.facePrincipal=cubo.faces[Cor.branco.getCor()];
-		cubo.facePrincipal.setFacesVizinhas(
+		cubo.faces[Cor.branco.getCor()].setFacesVizinhas(
 				cubo.faces[Cor.vermelho.getCor()], 
 				cubo.faces[Cor.laranja.getCor()],
 				cubo.faces[Cor.azul.getCor()],
 				cubo.faces[Cor.verde.getCor()]);
 		
+		cubo.faces[Cor.vermelho.getCor()].setFacesVizinhas(
+				cubo.faces[Cor.amarelo.getCor()],
+				cubo.faces[Cor.branco.getCor()],
+				cubo.faces[Cor.azul.getCor()],
+				cubo.faces[Cor.verde.getCor()]);
+
+        
+		cubo.faces[Cor.amarelo.getCor()].setFacesVizinhas(
+				cubo.faces[Cor.laranja.getCor()],
+				cubo.faces[Cor.vermelho.getCor()],
+				cubo.faces[Cor.azul.getCor()],
+				cubo.faces[Cor.verde.getCor()]);
+		
+		cubo.faces[Cor.laranja.getCor()].setFacesVizinhas(
+                cubo.faces[Cor.branco.getCor()],
+                cubo.faces[Cor.amarelo.getCor()],
+                cubo.faces[Cor.azul.getCor()],
+                cubo.faces[Cor.verde.getCor()]);
+		
+		cubo.faces[Cor.azul.getCor()].setFacesVizinhas(
+			cubo.faces[Cor.vermelho.getCor()],
+			cubo.faces[Cor.laranja.getCor()], 
+			cubo.faces[Cor.amarelo.getCor()], 
+			cubo.faces[Cor.branco.getCor()]);
 		
 		Face verde = cubo.faces[Cor.verde.getCor()];
 		verde.setFacesVizinhas(
 			cubo.faces[Cor.vermelho.getCor()],
 			cubo.faces[Cor.laranja.getCor()],
 			cubo.faces[Cor.branco.getCor()],
-			cubo.faces[Cor.amarelo.getCor()]
-		);
+			cubo.faces[Cor.amarelo.getCor()]);
 		
-
-		cubo.faces[Cor.vermelho.getCor()].setFacesVizinhas(
-				cubo.faces[Cor.verde.getCor()],
-				cubo.faces[Cor.azul.getCor()],
-				cubo.faces[Cor.amarelo.getCor()],
-				cubo.faces[Cor.branco.getCor()]);
-
-        
-		cubo.faces[Cor.amarelo.getCor()].setFacesVizinhas(
-				cubo.faces[Cor.verde.getCor()],
-				cubo.faces[Cor.azul.getCor()],
-				cubo.faces[Cor.laranja.getCor()],
-				cubo.faces[Cor.vermelho.getCor()]);
-
-				
-		cubo.faces[Cor.azul.getCor()].setFacesVizinhas(
-				cubo.faces[Cor.branco.getCor()],
-				cubo.faces[Cor.amarelo.getCor()], 
-				cubo.faces[Cor.vermelho.getCor()], 
-				cubo.faces[Cor.laranja.getCor()]);
   
         
-        cubo.faces[Cor.laranja.getCor()].setFacesVizinhas(
-                cubo.faces[Cor.branco.getCor()],
-                cubo.faces[Cor.amarelo.getCor()],
-                cubo.faces[Cor.azul.getCor()],
-                cubo.faces[Cor.verde.getCor()]);
         
 		return cubo;
 	}

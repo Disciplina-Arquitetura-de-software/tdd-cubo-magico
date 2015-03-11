@@ -16,4 +16,8 @@ public class CuboMagico {
 	public void setFaces(Face[] faces) {
 		this.faces = faces;
 	}
+
+	public void rotacionar(Direcoes esquerda) {
+		facePrincipal = facePrincipal.getFaceDireita();
+	}
 }
