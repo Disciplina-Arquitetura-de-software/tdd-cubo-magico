@@ -66,7 +66,6 @@ public class TestBuilder3x3 {
 	
 	@Test
 	public void testBuildPecaFace() {
-		Peca peca = new Peca();
 		PecaFace face = this.builder.buildPecaFace(Cor.vermelho);
 		
 		assertNotNull(face);
@@ -172,11 +171,10 @@ public class TestBuilder3x3 {
 		assertEquals(Cor.vermelho, verde.getFaceDireita().nome);
 		assertNotNull(verde.getFaceEsquerda());
 		assertEquals(Cor.laranja, verde.getFaceEsquerda().nome);
-		assertNotNull(verde.getCima);
+		assertNotNull(verde.getFaceCima());
 		assertEquals(Cor.branco, verde.getFaceCima());
 		assertNotNull(verde.getFaceBaixo());
-		assertEquals(Cor.amarelo, verde.getFaceBaixo();
-		)
+		assertEquals(Cor.amarelo, verde.getFaceBaixo());
 		
 		Face amarelo = vermelho.getFaceDireita();
 		assertEquals(Cor.amarelo, amarelo.nome);
