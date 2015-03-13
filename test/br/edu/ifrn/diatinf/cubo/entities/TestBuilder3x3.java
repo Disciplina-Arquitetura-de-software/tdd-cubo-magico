@@ -183,9 +183,9 @@ public class TestBuilder3x3 {
 		assertNotNull(amarelo.getFaceEsquerda());
 		assertEquals(Cor.vermelho, amarelo.getFaceEsquerda().nome);
 		assertNotNull(amarelo.getFaceCima());
-		assertEquals(Cor.azul, amarelo.getFaceCima().nome);
+		assertEquals(Cor.verde, amarelo.getFaceCima().nome);
 		assertNotNull(amarelo.getFaceBaixo());
-		assertEquals(Cor.verde, amarelo.getFaceBaixo().nome);
+		assertEquals(Cor.azul, amarelo.getFaceBaixo().nome);
 		
 		Face azul = branco.getFaceCima();
 		assertEquals(Cor.azul, azul.nome);
@@ -199,6 +199,7 @@ public class TestBuilder3x3 {
 		assertEquals(Cor.branco, azul.getFaceBaixo().nome);
 		
 	}
+	
 	
 	
 	
