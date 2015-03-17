@@ -1,5 +1,5 @@
 package br.edu.ifrn.diatinf.cubo.entities;
-
+//testando push
 public enum Cor {
 	indefinida(-1), 
 	vermelho(0), 
@@ -7,7 +7,7 @@ public enum Cor {
 	azul(2), 
 	branco(3), 
 	amarelo(4),
-	laranja(5);
+	laranja(5); 
 	
 	int value;
 	Cor(int value){
