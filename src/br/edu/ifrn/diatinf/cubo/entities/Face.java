@@ -14,8 +14,20 @@ public class Face {
 		return null;
 	}
     
-	public Face getFace(Direcoes direcao) {
-		return facesVizinhas[direcao.getDirecoes()];
+	public Face getFaceDireita() {
+		return facesVizinhas[Direcoes.Direita.getDirecoes()];
+	}
+
+	public Face getFaceEsquerda() {
+		return facesVizinhas[Direcoes.Esquerda.getDirecoes()];
+	}
+
+	public Face getFaceBaixo() {
+		return facesVizinhas[Direcoes.Baixo.getDirecoes()];
+	}
+
+	public Face getFaceCima() {
+		return facesVizinhas[Direcoes.Cima.getDirecoes()];
 	}
 	
 	public void setFacesVizinhas(Face direita, Face esquerda, Face cima, Face baixo){
