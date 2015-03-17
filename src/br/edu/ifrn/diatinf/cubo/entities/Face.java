@@ -29,6 +29,26 @@ public class Face {
 	public Face getFaceCima() {
 		return facesVizinhas[Direcoes.Cima.getDirecoes()];
 	}
+
+	public Face getFace(Direcoes direcao) {
+		return facesVizinhas[direcao.getDirecoes()];
+	}
+	
+	public void rotacaoHoraria(){
+		Face faceAux = this.getFaceDireita();
+		facesVizinhas[Direcoes.Direita.getDirecoes()]	= facesVizinhas[Direcoes.Cima.getDirecoes()];
+		facesVizinhas[Direcoes.Cima.getDirecoes()] 		= facesVizinhas[Direcoes.Esquerda.getDirecoes()];
+		facesVizinhas[Direcoes.Esquerda.getDirecoes()]	= facesVizinhas[Direcoes.Baixo.getDirecoes()];
+		facesVizinhas[Direcoes.Baixo.getDirecoes()]		= faceAux;
+	}
+	
+	public void rotacaoAntiHoraria(){
+		Face faceAux = this.getFaceDireita();
+		facesVizinhas[Direcoes.Direita.getDirecoes()]	= facesVizinhas[Direcoes.Baixo.getDirecoes()];
+		facesVizinhas[Direcoes.Baixo.getDirecoes()]		= facesVizinhas[Direcoes.Esquerda.getDirecoes()];
+		facesVizinhas[Direcoes.Esquerda.getDirecoes()]	= facesVizinhas[Direcoes.Cima.getDirecoes()];
+		facesVizinhas[Direcoes.Cima.getDirecoes()]		= faceAux;
+	}
 	
 	public void setFacesVizinhas(Face direita, Face esquerda, Face cima, Face baixo){
 		this.facesVizinhas[Direcoes.Direita.getDirecoes()] = direita;
