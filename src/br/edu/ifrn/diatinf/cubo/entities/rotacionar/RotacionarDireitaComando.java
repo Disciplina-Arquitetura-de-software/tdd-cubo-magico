@@ -9,4 +9,16 @@ public class RotacionarDireitaComando extends RotacionarComando {
 		cubo.facePrincipal = cubo.facePrincipal.getFaceEsquerda();
 	}
 
+	@Override
+	protected void rotate(CuboMagico cubo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void facesUpadate(CuboMagico cubo) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

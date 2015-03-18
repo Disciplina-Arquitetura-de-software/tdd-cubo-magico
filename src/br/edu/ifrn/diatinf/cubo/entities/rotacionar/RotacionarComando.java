@@ -8,6 +8,13 @@ import br.edu.ifrn.diatinf.cubo.entities.Direcoes;
 
 public abstract class RotacionarComando {
 
+	public void execute(CuboMagico cubo) {
+		rotate(cubo);
+		facesUpadate(cubo);
+	}
+	
+	protected abstract void rotate(CuboMagico cubo);
+	protected abstract void facesUpadate(CuboMagico cubo); 
 	
 	public abstract void executar(CuboMagico cubo);
 	

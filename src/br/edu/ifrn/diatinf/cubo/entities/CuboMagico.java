@@ -21,7 +21,7 @@ public class CuboMagico {
 
 	public void rotacionar(Direcoes direcao) {
 		RotacionarComando rotacionar = RotacionarComando.getRotacionarComando(direcao);		
-		rotacionar.executar(this);
+		rotacionar.execute(this);
 	}
 	
 }
