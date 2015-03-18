@@ -13,4 +13,9 @@ public enum Direcoes {
 	public int getDirecoes(){
 		return value;
 	}
+	
+	public int getOposto(){
+		if(value < 2)	return value+2;
+		else			return value-2;
+	}
 }

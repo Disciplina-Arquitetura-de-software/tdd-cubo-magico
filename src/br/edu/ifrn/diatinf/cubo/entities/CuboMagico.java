@@ -19,7 +19,7 @@ public class CuboMagico {
 
 	public void rotacionar(Direcoes direcao) {
 		
-		facePrincipal=facePrincipal.getFace(direcao);
+		facePrincipal=facePrincipal.getFace(direcao.getOposto());
 		Face faceHorario;		//Face a sofrer rotação no sentido horario
 		Face faceAntiHorario;	//Face a sofrer rotação no sentido anti-horario
 		

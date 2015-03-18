@@ -33,6 +33,10 @@ public class Face {
 	public Face getFace(Direcoes direcao) {
 		return facesVizinhas[direcao.getDirecoes()];
 	}
+
+	public Face getFace(int direcao) {
+		return facesVizinhas[direcao];
+	}
 	
 	public void rotacaoHoraria(){
 		Face faceAux = this.getFaceDireita();
