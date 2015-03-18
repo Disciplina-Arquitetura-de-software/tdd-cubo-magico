@@ -16,23 +16,19 @@ public class CuboMagico {
 	public void setFaces(Face[] faces) {
 		this.faces = faces;
 	}
-
-	public void rotacionar(Direcoes direcao) {
-		
-		if (direcao==Direcoes.Esquerda){
-			facePrincipal=facePrincipal.getFaceDireita();
-		}
-		else if(direcao==Direcoes.Direita){
-			facePrincipal=facePrincipal.getFaceEsquerda();
-		}
-		else if(direcao==Direcoes.Cima){
-			facePrincipal=facePrincipal.getFaceBaixo();
-		}
-		else if(direcao==Direcoes.Baixo){
-			facePrincipal=facePrincipal.getFaceCima();
-		}
-		
-		
+	
+	public void rotacionarEsquerda() {
+		facePrincipal = facePrincipal.getFaceDireita();
 	}
 	
+	public void rotacionarDireita() {
+		facePrincipal = facePrincipal.getFaceEsquerda();
+	}
+	
+	public void rotacionarBaixo() {
+		facePrincipal = facePrincipal.getFaceBaixo();
+	}
+	public void rotacionarCima() {
+		facePrincipal = facePrincipal.getFaceCima();
+	}
 }
