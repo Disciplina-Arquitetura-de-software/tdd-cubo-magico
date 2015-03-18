@@ -17,21 +17,10 @@ public class CuboMagico {
 		this.faces = faces;
 	}
 
-	public void rotacionar(Direcoes direcao) {
-		
-		if (direcao==Direcoes.Esquerda){
-			facePrincipal=facePrincipal.getFaceDireita();
-		}
-		else if(direcao==Direcoes.Direita){
-			facePrincipal=facePrincipal.getFaceEsquerda();
-		}
-		else if(direcao==Direcoes.Cima){
-			facePrincipal=facePrincipal.getFaceBaixo();
-		}
-		else if(direcao==Direcoes.Baixo){
-			facePrincipal=facePrincipal.getFaceCima();
-		}
-		
+	StateRotacionar rotacionarEsquerda();
+	StateRotacionar rotacionarDireita();
+	StateRotacionar rotacionarCima();
+	StateRotacionar rotacionarBaixo();
 		
 	}
 	

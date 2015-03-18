@@ -2,6 +2,17 @@ package br.edu.ifrn.diatinf.cubo.entities;
 
 public interface StateRotacionar {
 
-	void rotacionar(StateContext context, String name);
+	StateRotacionar rotacionarEsquerda(Face facePrincipal){
+		facePrincipal=facePrincipal.getFaceDireita();
+	};
+	StateRotacionar rotacionarDireita(){
+		facePrincipal=facePrincipal.getFaceEsquerda(Face facePrincipal);
+	};
+	StateRotacionar rotacionarCima(Face facePrincipal){
+		facePrincipal=facePrincipal.getFaceCima();
+	};
+	StateRotacionar rotacionarBaixo(){
+		facePrincipal=facePrincipal.getFaceBaix(Face facePrincipal);
+	};
 }
 
