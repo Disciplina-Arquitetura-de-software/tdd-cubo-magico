@@ -5,6 +5,12 @@ public class CuboMagico {
 	public Face[] faces;
 	public Face facePrincipal;
 	
+	Rotacao rotacao;
+	RotacionarCima rotCima;
+	RotacionarBaixo rotBaixo;
+	RotacionarDireita rotDireita;
+	RotacionarEsquerda rotEsquerda;
+	
 	public Face getFacePrincipal() {
 		return this.facePrincipal;
 	}
@@ -17,22 +23,41 @@ public class CuboMagico {
 		this.faces = faces;
 	}
 
-	public void rotacionar(Direcoes direcao) {
+//	public void rotacionar(Direcoes direcao) {
 		
-		if (direcao==Direcoes.Esquerda){
-			facePrincipal=facePrincipal.getFaceDireita();
-		}
-		else if(direcao==Direcoes.Direita){
-			facePrincipal=facePrincipal.getFaceEsquerda();
-		}
-		else if(direcao==Direcoes.Cima){
-			facePrincipal=facePrincipal.getFaceBaixo();
-		}
-		else if(direcao==Direcoes.Baixo){
-			facePrincipal=facePrincipal.getFaceCima();
-		}
+//		if (direcao==Direcoes.Esquerda){
+//			facePrincipal=facePrincipal.getFaceDireita();
+//		}
+//		else if(direcao==Direcoes.Direita){
+//			facePrincipal=facePrincipal.getFaceEsquerda();
+//		}
+//		else if(direcao==Direcoes.Cima){
+//			facePrincipal=facePrincipal.getFaceBaixo();
+//		}
+//		else if(direcao==Direcoes.Baixo){
+//			facePrincipal=facePrincipal.getFaceCima();
+//		}
+	
 		
+//	}
+	
+	public void rotacionarViaState(Direcoes dir){
 		
+		if (dir==Direcoes.Esquerda){
+			rotacao.setState(rotEsquerda);
+		}
+		else if(dir==Direcoes.Direita){
+			rotacao.setState(rotDireita);
+		}
+		else if(dir==Direcoes.Cima){
+			rotacao.setState(rotCima);
+		}
+		else if(dir==Direcoes.Baixo){
+			rotacao.setState(rotBaixo);
+		}
+	
 	}
+	
+	
 	
 }
